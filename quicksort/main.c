@@ -6,7 +6,7 @@
 /*   By: vfurmane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 14:04:49 by vfurmane          #+#    #+#             */
-/*   Updated: 2020/09/19 10:39:49 by vfurmane         ###   ########.fr       */
+/*   Updated: 2020/09/19 10:42:39 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,13 @@ void	ft_aff_tab(int *tab, int size)
 	int	i;
 
 	i = 0;
-	while (i < size)
+	while (i < size - 1)
 	{
 		ft_putnbr(tab[i++]);
-		ft_putchar(1, '\n');
+		ft_putchar(1, ' ');
 	}
+	ft_putnbr(tab[i++]);
+	ft_putchar(1, '\n');
 }
 
 int		main(int argc, char **argv)
