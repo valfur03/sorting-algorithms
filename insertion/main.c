@@ -6,17 +6,25 @@
 /*   By: vfurmane <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 14:04:49 by vfurmane          #+#    #+#             */
-/*   Updated: 2020/09/18 19:37:58 by vfurmane         ###   ########.fr       */
+/*   Updated: 2020/09/19 10:36:50 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 #include "put.h"
 
+void	ft_swap(int *a, int *b)
+{
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
 void	ft_sort(int *tab, int size)
 {
 	int	i;
-	int	tmp;
 	int	start;
 
 	start = 1;
@@ -25,9 +33,8 @@ void	ft_sort(int *tab, int size)
 		i = start;
 		while (i > 0 && tab[i - 1] > tab[i])
 		{
-			tmp = tab[i - 1];
-			tab[i - 1] = tab[i];
-			tab[i--] = tmp;
+			ft_swap(&tab[i - 1], &tab[i]);
+			i--;
 		}
 		start++;
 	}
